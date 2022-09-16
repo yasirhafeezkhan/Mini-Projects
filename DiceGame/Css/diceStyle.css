@@ -24,6 +24,17 @@ body{
 {
 animation-name: dice;
 animation-duration: 0.5s;
+
+-webkit-animation-name: dice;
+-webkit-animation-duration: 0.5s;
+
+-moz-animation-name: dice;
+-moz-animation-duration: 0.5;
+
+-ms-animation-name: dice;
+-ms-animation-duration: 0.5;
+
+
 }
 
 @keyframes dice {
