@@ -1,6 +1,11 @@
 let diceInput=document.getElementById('diceImg')! as HTMLInputElement;
 let score1=document.getElementById('score1')! as HTMLInputElement;
 let score2=document.getElementById('score2')! as HTMLInputElement;
+let playerTurnMsg=document.getElementById('playerTurnMsg')! as HTMLInputElement;
+playerTurnMsg.innerText="PLAYER 1 IS PLAYING NOW";
+let display1=document.getElementById('display1')! as HTMLInputElement;
+display1.style.backgroundColor="#f71414";
+let display2=document.getElementById('display2')! as HTMLInputElement;
 let turn:string="";
 let totalScore1:number=0;
 let totalScore2:number=0;
@@ -9,20 +14,23 @@ let totalScore2:number=0;
 
 function btnRollDice():void
 {
-  console.log("======inside btn roll dice=== turn==="+turn);
   let diceNum:number=Math.ceil((Math.random()*6));
-  console.log("==== dice num==="+diceNum);
   diceInput.innerHTML="<img src='Img/"+diceNum+".png' class='img-fluid imgDice' alt='dice'/>";
   if(diceNum==1)
   {
     turn=switchPlayer(turn);
     if(turn==='player2')
     {
-   alert("Player 2's turn now");
+      playerTurnMsg.innerText="PLAYER 2 IS PLAYING NOW";
+      display1.style.backgroundColor="";
+      display2.style.backgroundColor="#f71414";
     }
     else
     {
-      alert("Player 1's turn now");
+
+      playerTurnMsg.innerText="PLAYER 1 IS PLAYING NOW";
+      display2.style.backgroundColor="";
+      display1.style.backgroundColor="#f71414";
     }
     
   }
@@ -55,7 +63,7 @@ function btnRollDice():void
 
 function switchPlayer(turn:string):string
 {
-    console.log("====turn in switch fucntion===="+turn);
+ 
   if(turn==='player1' || turn==='')
   {
     turn='';

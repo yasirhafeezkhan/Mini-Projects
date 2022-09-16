@@ -1,21 +1,28 @@
 var diceInput = document.getElementById('diceImg');
 var score1 = document.getElementById('score1');
 var score2 = document.getElementById('score2');
+var playerTurnMsg = document.getElementById('playerTurnMsg');
+playerTurnMsg.innerText = "PLAYER 1 IS PLAYING NOW";
+var display1 = document.getElementById('display1');
+display1.style.backgroundColor = "#f71414";
+var display2 = document.getElementById('display2');
 var turn = "";
 var totalScore1 = 0;
 var totalScore2 = 0;
 function btnRollDice() {
-    console.log("======inside btn roll dice=== turn===" + turn);
     var diceNum = Math.ceil((Math.random() * 6));
-    console.log("==== dice num===" + diceNum);
     diceInput.innerHTML = "<img src='Img/" + diceNum + ".png' class='img-fluid imgDice' alt='dice'/>";
     if (diceNum == 1) {
         turn = switchPlayer(turn);
         if (turn === 'player2') {
-            alert("Player 2's turn now");
+            playerTurnMsg.innerText = "PLAYER 2 IS PLAYING NOW";
+            display1.style.backgroundColor = "";
+            display2.style.backgroundColor = "#f71414";
         }
         else {
-            alert("Player 1's turn now");
+            playerTurnMsg.innerText = "PLAYER 1 IS PLAYING NOW";
+            display2.style.backgroundColor = "";
+            display1.style.backgroundColor = "#f71414";
         }
     }
     else if (diceNum != 1 && turn === 'player1' || diceNum != 1 && turn === '') {
@@ -40,7 +47,6 @@ function btnRollDice() {
     }
 }
 function switchPlayer(turn) {
-    console.log("====turn in switch fucntion====" + turn);
     if (turn === 'player1' || turn === '') {
         turn = '';
         turn = 'player2';

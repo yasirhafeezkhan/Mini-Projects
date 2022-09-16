@@ -18,22 +18,25 @@
 <body>
  <!-- Main section START -->
 <section class="bg-dark">
-    <div class="mainContainer container mt-5 mb-5 pt-2 pb-2">
+    <div class="mainContainer container mt-5 mb-5 pt-2 pb-5">
     <h2 class="text-white text-center">DICE GAME</h2>
     <h1 class="text-center" id="msg"></h1>
     
     <!-- Player display score section START -->
     <div class="row mt-5">
        <div class="col-md-6">
+        <div id="display1">
         <h3 class="text-white text-center">Player 1</h3>
         <h5 class="text-white text-center">Score</h5>
         <h5 class="text-warning text-center" id="score1">0</h5>
-        
+        </div>
        </div>
        <div class="col-md-6">
+        <div id="display2">
         <h3 class="text-white text-center">Player 2</h3>
         <h5 class="text-white text-center">Score</h5>
         <h5 class="text-warning text-center" id="score2">0</h5>
+        </div>
        </div>
     </div>
     <!-- Player display score section END -->
@@ -51,7 +54,10 @@
      <!-- Roll dice button START -->
      <div class="row">
         <div class="col-md-12 text-center">
-            <button class="btn fs-5 mt-5 mb-5" id="btnRollDice" onclick="btnRollDice();">Roll Dice</button>
+            <button class="btn fs-5 mt-5 mb-3" id="btnRollDice" onclick="btnRollDice();">Roll Dice</button>
+            <div>
+            <span class="text-white bg-dark p-2" id="playerTurnMsg"></span>
+        </div>
         </div>
      </div>
       <!-- Roll dice button END -->
