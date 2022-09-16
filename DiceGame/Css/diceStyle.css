@@ -23,7 +23,7 @@ body{
 .imgDice
 {
 animation-name: dice;
-animation-duration: 4s;
+animation-duration: 0.6s;
 }
 
 @keyframes dice {
