@@ -1,6 +1,7 @@
 let diceInput=document.getElementById('diceImg')! as HTMLInputElement;
 let score1=document.getElementById('score1')! as HTMLInputElement;
 let score2=document.getElementById('score2')! as HTMLInputElement;
+let btnRollDice=document.getElementById('btnRollDice')! as HTMLInputElement;
 let playerTurnMsg=document.getElementById('playerTurnMsg')! as HTMLInputElement;
 playerTurnMsg.innerText="PLAYER 1 IS PLAYING NOW";
 let display1=document.getElementById('display1')! as HTMLInputElement;
@@ -12,7 +13,7 @@ let totalScore2:number=0;
 
 
 
-function btnRollDice():void
+btnRollDice.addEventListener('click',()=>
 {
   let diceNum:number=Math.ceil((Math.random()*6));
   diceInput.innerHTML="<img src='Img/"+diceNum+".png' class='img-fluid imgDice' alt='dice'/>";
@@ -59,7 +60,7 @@ function btnRollDice():void
      }
   }
 
-}
+});
 
 function switchPlayer(turn:string):string
 {

@@ -1,6 +1,7 @@
 var diceInput = document.getElementById('diceImg');
 var score1 = document.getElementById('score1');
 var score2 = document.getElementById('score2');
+var btnRollDice = document.getElementById('btnRollDice');
 var playerTurnMsg = document.getElementById('playerTurnMsg');
 playerTurnMsg.innerText = "PLAYER 1 IS PLAYING NOW";
 var display1 = document.getElementById('display1');
@@ -9,7 +10,7 @@ var display2 = document.getElementById('display2');
 var turn = "";
 var totalScore1 = 0;
 var totalScore2 = 0;
-function btnRollDice() {
+btnRollDice.addEventListener('click', function () {
     var diceNum = Math.ceil((Math.random() * 6));
     diceInput.innerHTML = "<img src='Img/" + diceNum + ".png' class='img-fluid imgDice' alt='dice'/>";
     if (diceNum == 1) {
@@ -45,7 +46,7 @@ function btnRollDice() {
             }, 3000);
         }
     }
-}
+});
 function switchPlayer(turn) {
     if (turn === 'player1' || turn === '') {
         turn = '';
